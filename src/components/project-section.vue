@@ -25,9 +25,13 @@
 </template>
 
 <script setup>
+import quizStudio from "@/assets/project-thumbnails/quiz-studio.webp";
+import installSmtp from "@/assets/project-thumbnails/install-smtp.webp";
+import quickBites from "@/assets/project-thumbnails/quick-bites.webp";
+
 const projects = [
   {
-    image: "assets/project-thumbnails/quiz-studio.webp",
+    image: quizStudio,
     title: "Quiz Studio",
     description:
       "An AdminCMS for managing dynamic quizzes and participants, with customizable themes, question types, and participant tracking.",
@@ -41,7 +45,7 @@ const projects = [
     ],
   },
   {
-    image: "assets/project-thumbnails/install-smtp.webp",
+    image: installSmtp,
     title: "Install SMTP",
     description:
       "An automated solution for setting up SMTP, simplifying the configuration process for seamless email integration.",
@@ -59,7 +63,7 @@ const projects = [
     ],
   },
   {
-    image: "assets/project-thumbnails/quick-bites.webp",
+    image: quickBites,
     title: "Quick Bites",
     description:
       "A canteen pre-order system that lets customers pre order products from the canteen for a quick pick-up.",

@@ -57,6 +57,10 @@
 </template>
 
 <script setup>
+import passafundImage1 from "@/assets/images/passafund/passafund-1.webp";
+import passafundImage2 from "@/assets/images/passafund/passafund-2.webp";
+import passafundImage3 from "@/assets/images/passafund/passafund-3.webp";
+
 const journey = [
   {
     company: "Passafund",
@@ -64,9 +68,9 @@ const journey = [
     description:
       "Contributed to the development of dynamic web applications by building user-friendly interfaces using modern frameworks like Vue.js and Vuetify. Collaborated closely with senior developers to optimize performance and ensure code quality. Implemented key features for Passafund's platform, such as real-time data fetching, dynamic quiz management, and enhanced user authentication. This experience provided a strong foundation in software engineering practices, teamwork, and problem-solving.",
     carouselImages: [
-      { src: "assets/images/passafund/passafund-1.webp" },
-      { src: "assets/images/passafund/passafund-2.webp" },
-      { src: "assets/images/passafund/passafund-3.webp" },
+      { src: passafundImage1 },
+      { src: passafundImage2 },
+      { src: passafundImage3 },
     ],
   },
 ];
