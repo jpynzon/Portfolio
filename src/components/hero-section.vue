@@ -58,8 +58,9 @@
 </template>
 <script setup>
 import { saveAs } from "file-saver";
+import resume from "@/assets/resume.pdf";
 
 const downloadResume = () => {
-  saveAs("@/assets/resume.pdf", "Joshua-Paulo-Ynzon_Resume.pdf");
+  saveAs(resume, "Joshua-Paulo-Ynzon_Resume.pdf");
 };
 </script>
