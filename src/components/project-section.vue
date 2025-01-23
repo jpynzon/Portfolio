@@ -27,7 +27,7 @@
 <script setup>
 const projects = [
   {
-    image: "src/assets/project-thumbnails/quiz-studio.webp",
+    image: "@/assets/project-thumbnails/quiz-studio.webp",
     title: "Quiz Studio",
     description:
       "An AdminCMS for managing dynamic quizzes and participants, with customizable themes, question types, and participant tracking.",
@@ -41,7 +41,7 @@ const projects = [
     ],
   },
   {
-    image: "src/assets/project-thumbnails/install-smtp.webp",
+    image: "@/assets/project-thumbnails/install-smtp.webp",
     title: "Install SMTP",
     description:
       "An automated solution for setting up SMTP, simplifying the configuration process for seamless email integration.",
@@ -59,7 +59,7 @@ const projects = [
     ],
   },
   {
-    image: "src/assets/project-thumbnails/quick-bites.webp",
+    image: "@/assets/project-thumbnails/quick-bites.webp",
     title: "Quick Bites",
     description:
       "A canteen pre-order system that lets customers pre order products from the canteen for a quick pick-up.",

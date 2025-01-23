@@ -60,6 +60,6 @@
 import { saveAs } from "file-saver";
 
 const downloadResume = () => {
-  saveAs("src/assets/resume.pdf", "Joshua-Paulo-Ynzon_Resume.pdf");
+  saveAs("@/assets/resume.pdf", "Joshua-Paulo-Ynzon_Resume.pdf");
 };
 </script>
