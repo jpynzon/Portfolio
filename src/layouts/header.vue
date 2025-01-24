@@ -65,7 +65,7 @@ const sidebar = ref(false);
 const socialLinks = [
   { icon: "mdi-github", href: "https://github.com/jpynzon" },
   { icon: "mdi-linkedin", href: "https://linkedin.com/in/jpynzon" },
-  { icon: "mdi-facebook", href: "https://facebook.com/khunichiii" },
+  { icon: "mdi-facebook", href: "https://facebook.com/jpynzon" },
 ];
 
 const navigationLinks = [

@@ -29,7 +29,7 @@
                   variant="outlined"
                   rounded="pill"
                   size="small"
-                  prepend-icon="mdi-github"
+                  :prepend-icon="button.icon"
                   :href="button.href"
                   target="_blank"
                   >{{ button.label || "Button Label" }}</v-btn

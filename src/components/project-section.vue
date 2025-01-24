@@ -36,7 +36,6 @@ const projects = [
     description:
       "An AdminCMS for managing dynamic quizzes and participants, with customizable themes, question types, and participant tracking.",
     buttons: [
-      { href: "", label: "Repository", icon: "mdi-github" },
       {
         href: "https://dev.studio.passafund.com",
         label: "Live Demo",

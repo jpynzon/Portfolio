@@ -85,7 +85,12 @@
           sm="6"
           md="4"
         >
-          <v-card rounded="xl" class="card pa-3">
+          <v-card
+            rounded="xl"
+            class="card pa-3"
+            :href="item.href"
+            target="_blank"
+          >
             <v-col class="d-flex align-center">
               <v-icon :color="item.color" class="me-2" size="x-large">
                 {{ item.icon }}
@@ -143,9 +148,24 @@ const isFormValid = computed(() => {
 });
 
 const contactItems = [
-  { icon: "mdi-email", name: "joshuapauloynzon@gmail.com", color: "#f2a60c" },
-  { icon: "mdi-linkedin", name: "jpynzon", color: "#0077B5" },
-  { icon: "mdi-facebook", name: "jpynzon", color: "#1877F2" },
+  {
+    icon: "mdi-email",
+    name: "joshuapauloynzon@gmail.com",
+    color: "#f2a60c",
+    href: "https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=joshuapauloynzon@gmail.com",
+  },
+  {
+    icon: "mdi-linkedin",
+    name: "jpynzon",
+    color: "#0077B5",
+    href: "https://linkedin.com/in/jpynzon",
+  },
+  {
+    icon: "mdi-facebook",
+    name: "jpynzon",
+    color: "#1877F2",
+    href: "https://facebook.com/jpynzon",
+  },
 ];
 
 const resetForm = () => {
