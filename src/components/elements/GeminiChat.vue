@@ -7,7 +7,7 @@
         <v-card v-if="isChatOpen" class="chat-window pa-3">
             <div class="d-flex align-center justify-space-between">
                 <div class="d-flex align-center">
-                    <v-avatar class="ai-avatar me-3">
+                    <v-avatar class="ai-avatar me-2">
                         <v-img :src="profilePicture"></v-img>
                     </v-avatar>
                     Joshua's AI Chatbot
