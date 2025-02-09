@@ -146,7 +146,7 @@ watch(chatHistory, async () => {
     position: fixed;
     bottom: 80px;
     right: 20px;
-    width: 420px;
+    width: 320px;
     min-height: 300px;
     max-height: 500px;
     display: flex;
