@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@mdi/font": "7.4.47",
+    "axios": "^1.7.9",
     "emailjs-com": "^3.2.0",
     "file-saver": "^2.0.5",
     "lottie-web": "^5.12.2",

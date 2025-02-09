@@ -3,12 +3,7 @@
     <v-container>
       <div class="d-flex w-100 justify-space-between align-center px-5">
         <div class="menu-button hidden-md-and-up">
-          <v-btn
-            @click="sidebar = !sidebar"
-            class="menu-btn"
-            variant="text"
-            height="40px"
-          >
+          <v-btn @click="sidebar = !sidebar" class="menu-btn" variant="text" height="40px">
             <span class="menu-icon" :class="{ open: sidebar }">
               <span></span>
               <span></span>
@@ -18,39 +13,20 @@
         </div>
 
         <div class="nav-links hidden-sm-and-down">
-          <v-btn
-            v-for="item in navigationLinks"
-            :key="item.title"
-            :href="item.href"
-            class="me-5"
-            height="50px"
-          >
+          <v-btn v-for="item in navigationLinks" :key="item.title" :href="item.href" class="me-5" height="50px">
             {{ item.title }}
           </v-btn>
         </div>
 
         <div class="social-links">
-          <v-btn
-            v-for="item in socialLinks"
-            class="me-2"
-            size="small"
-            target="_blank"
-            :key="item.icon"
-            :icon="item.icon"
-            :href="item.href"
-          />
+          <v-btn v-for="item in socialLinks" class="me-2" size="small" target="_blank" :key="item.icon"
+            :icon="item.icon" :href="item.href" />
         </div>
       </div>
     </v-container>
   </v-app-bar>
 
-  <v-navigation-drawer
-    v-model="sidebar"
-    v-if="sidebar"
-    class="side-bar"
-    elevation="0"
-    temporary
-  >
+  <v-navigation-drawer v-model="sidebar" v-if="sidebar" class="side-bar" elevation="0" temporary>
     <v-list v-for="item in navigationLinks" :key="item.title">
       <v-list-item :href="item.href" :prepend-icon="item.icon">{{
         item.title
@@ -83,6 +59,7 @@ const navigationLinks = [
   backdrop-filter: blur(30px) !important;
   transition: background-color 0.3s, backdrop-filter 0.3s !important;
 }
+
 .side-bar {
   background-color: rgba(0, 0, 0, 0.5) !important;
   backdrop-filter: blur(30px) !important;

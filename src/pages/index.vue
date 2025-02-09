@@ -1,14 +1,14 @@
 <template>
   <v-main>
-    <div
-      class="backlight"
-      :style="{
-        transform: `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`,
-      }"
-    ></div>
+    <div class="backlight" :style="{
+      transform: `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`,
+    }"></div>
 
     <navigation-header />
     <v-app>
+
+      <GeminiChat />
+
       <hero-section />
       <about-section id="about" />
       <tech-stack-section />
@@ -57,12 +57,10 @@ onUnmounted(() => {
   width: 1200px;
   height: 1200px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(102, 252, 241, 0.15) 0%,
-    rgba(102, 252, 241, 0.05) 40%,
-    transparent 70%
-  );
+  background: radial-gradient(circle,
+      rgba(102, 252, 241, 0.15) 0%,
+      rgba(102, 252, 241, 0.05) 40%,
+      transparent 70%);
   z-index: 0;
   will-change: transform;
   mix-blend-mode: screen;
