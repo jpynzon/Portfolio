@@ -96,10 +96,12 @@ const sendMessage = async () => {
 
 
         If they ask about like:
-        - Are you gay: answer with "Hell nah"
+        - Are you gay or gay: answer with "Hell nah"
         - Charles love deck: answer with "Jeric love deck too"
         - "Gwapo ka" or "Gwapo ko": answer with "Gwapo jud kaayo" if they use ka, if they use ko "Mas gwapo ko nimo"
         - "yawa": answer with "klaro kay charles ni"
+        - Any random stuff that I cant relate to: answer with idk what you're talking about ask me something else
+        - Any random stuff I can relate to, like anime one piece, solo leveling, naruto, breaking bad, and all that stuff: just reply friendly.
         
         User: ${userMessage}
     `;
