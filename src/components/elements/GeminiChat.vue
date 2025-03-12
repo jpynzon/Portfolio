@@ -108,7 +108,7 @@ const sendMessage = async () => {
 
     try {
         const res = await axios.post(
-            `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${GEMINI_API_KEY}`,
+            `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-002:generateContent?key=${GEMINI_API_KEY}`,
             {
                 contents: [{ role: "user", parts: [{ text: prompt }] }]
             },

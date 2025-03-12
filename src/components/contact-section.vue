@@ -1,74 +1,32 @@
 <template>
   <div class="py-10 mb-15">
     <v-container>
-      <header-and-subheader
-        class="mb-15"
-        header="Let's Work Together"
-        subheader="We'd love to hear from you! Share your thoughts and ideas with us."
-        :show-subheader="true"
-      />
+      <header-and-subheader class="mb-15" header="Let's Work Together"
+        subheader="We'd love to hear from you! Share your thoughts and ideas with us." :show-subheader="true" />
 
       <v-card rounded="xl" class="pa-10">
-        <v-form
-          ref="form"
-          @submit.prevent="sendEmail"
-          class="position-relative"
-        >
-          <LottieAnimation
-            v-if="successfulSubmission"
-            :animation-data="success"
-            custom-style="height: 200px !important; position: absolute; top: 0; left: 50%; transform: translate(-50%, 50%);"
-          />
+        <v-form ref="form" @submit.prevent="sendEmail" class="position-relative">
+          <LottieAnimation v-if="successfulSubmission" :animation-data="success"
+            custom-style="height: 200px !important; position: absolute; top: 0; left: 50%; transform: translate(-50%, 50%);" />
 
-          <div
-            class="mb-3"
-            :style="successfulSubmission ? 'opacity: 0;' : 'block'"
-          >
+          <div class="mb-3" :style="successfulSubmission ? 'opacity: 0;' : 'block'">
             <h1 class="text-body-2">How should we call you?</h1>
-            <v-text-field
-              v-model="formData.name"
-              placeholder="Type your full name"
-              rounded="lg"
-              required
-              hint="Tell us your name so we can address you properly."
-              :rules="nameRules"
-            />
+            <v-text-field v-model="formData.name" placeholder="Type your full name" rounded="lg" required
+              hint="Tell us your name so we can address you properly." :rules="nameRules" />
           </div>
-          <div
-            class="mb-3"
-            :style="successfulSubmission ? 'opacity: 0;' : 'block'"
-          >
+          <div class="mb-3" :style="successfulSubmission ? 'opacity: 0;' : 'block'">
             <h1 class="text-body-2">Where can we reach you?</h1>
-            <v-text-field
-              v-model="formData.email"
-              placeholder="example@email.com"
-              type="email"
-              required
-              hint="We'll use this to get back to you."
-              :rules="emailRules"
-            />
+            <v-text-field v-model="formData.email" placeholder="example@email.com" type="email" required
+              hint="We'll use this to get back to you." :rules="emailRules" />
           </div>
           <div :style="successfulSubmission ? 'opacity: 0;' : 'block'">
             <h1 class="text-body-2">What’s on your mind?</h1>
-            <v-textarea
-              v-model="formData.message"
-              placeholder="Type your message"
-              required
-              hint="Feel free to share any thoughts, feedback, or ideas."
-              :rules="messageRules"
-            />
+            <v-textarea v-model="formData.message" placeholder="Type your message" required
+              hint="Feel free to share any thoughts, feedback, or ideas." :rules="messageRules" />
           </div>
 
-          <v-btn
-            v-if="!successfulSubmission"
-            class="float-right"
-            type="submit"
-            height="40px"
-            rounded="pill"
-            color="primary"
-            :loading="loading"
-            :disabled="!isFormValid"
-          >
+          <v-btn v-if="!successfulSubmission" class="float-right" type="submit" height="40px" rounded="pill"
+            color="primary" :loading="loading" :disabled="!isFormValid">
             Send Message
           </v-btn>
         </v-form>
@@ -77,20 +35,8 @@
       </v-card>
 
       <v-row class="mt-5">
-        <v-col
-          v-for="item in contactItems"
-          :key="item.name"
-          cols="12"
-          xs="6"
-          sm="6"
-          md="4"
-        >
-          <v-card
-            rounded="xl"
-            class="card pa-3"
-            :href="item.href"
-            target="_blank"
-          >
+        <v-col v-for="item in contactItems" :key="item.name" cols="12" xs="6" sm="6" md="4">
+          <v-card rounded="xl" class="card pa-3" :href="item.href" target="_blank">
             <v-col class="d-flex align-center">
               <v-icon :color="item.color" class="me-2" size="x-large">
                 {{ item.icon }}
@@ -210,4 +156,3 @@ const sendEmail = () => {
     .finally(onFinally);
 };
 </script>
-

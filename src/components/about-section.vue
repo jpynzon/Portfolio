@@ -1,17 +1,9 @@
 <template>
   <div class="py-10">
     <v-container>
-      <header-and-subheader
-        class="mb-15"
-        header="About Me"
-        :show-subheader="false"
-      />
+      <header-and-subheader class="mb-15" header="About Me" :show-subheader="false" />
       <v-card rounded="xl">
-        <two-column-layout
-          :default-left-layout="false"
-          :default-right-layout="false"
-          custom-class="align-center px-10"
-        >
+        <two-column-layout :default-left-layout="false" :default-right-layout="false" custom-class="align-center px-10">
           <template #rightColumn>
             <div class="mb-5">
               <h1 class="text-body-1 mb-5">
@@ -32,10 +24,7 @@
           </template>
           <template #leftColumn>
             <div>
-              <LottieAnimation
-                style="min-width: 200px; width: 100%; height: 100%"
-                :animation-data="manCoding"
-              />
+              <LottieAnimation style="min-width: 200px; width: 100%; height: 100%" :animation-data="manCoding" />
             </div>
           </template>
         </two-column-layout>

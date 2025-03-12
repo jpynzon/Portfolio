@@ -1,21 +1,12 @@
 <template>
   <div class="py-10">
     <v-container>
-      <header-and-subheader
-        class="mb-15"
-        header="Tech Stack"
-        subheader="Languages, frameworks, and tools I work with:"
-      />
-      <v-row>
+      <header-and-subheader class="mb-15" header="Tech Stack"
+        subheader="Languages, frameworks, and tools I work with:" />
+      <v-row ref="techStackContainer">
         <transition-group name="slide-y">
-          <v-col
-            v-for="item in visibleTechStack"
-            :key="item.name"
-            cols="12"
-            xs="6"
-            sm="6"
-            md="4"
-          >
+          <v-col v-for="(item, index) in visibleTechStack" :key="item.name" cols="12" xs="6" sm="6" md="4"
+            :data-index="index" class="tech-item">
             <v-card rounded="xl" class="card pa-3">
               <v-col>
                 <v-icon :color="item.color" class="me-2" size="x-large">
@@ -28,14 +19,8 @@
         </transition-group>
       </v-row>
       <v-col v-if="showExpandButton" class="d-flex justify-center mt-5">
-        <v-btn
-          class="hidden-md-and-up"
-          height="40px"
-          variant="text"
-          rounded="pill"
-          :append-icon="expandButtonIcon"
-          @click="toggleExpanded"
-        >
+        <v-btn class="hidden-md-and-up" height="40px" variant="text" rounded="pill" :append-icon="expandButtonIcon"
+          @click="toggleExpanded">
           {{ expandButtonText }}
         </v-btn>
       </v-col>
@@ -44,12 +29,14 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted, nextTick } from "vue";
 import { useDisplay } from "vuetify";
+import gsap from "gsap";
 
 const display = useDisplay();
 const ITEMS_TO_SHOW = 3;
 const isExpanded = ref(false);
+const techStackContainer = ref(null);
 
 const techStack = [
   { icon: "mdi-language-html5", name: "HTML5", color: "#F06529" },
@@ -84,31 +71,31 @@ const expandButtonIcon = computed(() => {
 
 const toggleExpanded = () => {
   isExpanded.value = !isExpanded.value;
+  nextTick(() => animateTechStack());
 };
+
+const animateTechStack = () => {
+  gsap.from(".tech-item", {
+    opacity: 0,
+    y: 50,
+    duration: 0.6,
+    stagger: 0.2,
+    ease: "power2.out",
+  });
+};
+
+onMounted(() => {
+  nextTick(() => animateTechStack());
+});
 </script>
 
 <style scoped>
 .card {
   transition: 0.3s;
 }
+
 .card:hover {
-  cursor: pointer;
   transform: translateY(-10px);
   box-shadow: inset 0 0 0 1px #66fcf1;
-}
-
-.slide-y-enter-active,
-.slide-y-leave-active {
-  transition: all 0.3s ease-out;
-}
-
-.slide-y-enter-from {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.slide-y-leave-to {
-  opacity: 0;
-  transform: translateY(-20px);
 }
 </style>

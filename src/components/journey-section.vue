@@ -1,23 +1,12 @@
 <template>
   <div class="py-10">
     <v-container>
-      <header-and-subheader
-        class="mb-15"
-        header="Career Journey"
-        subheader="Showcasing the companies I've worked with and the hands-on experience I've gained."
-      />
+      <header-and-subheader class="mb-15" header="Career Journey"
+        subheader="Showcasing the companies I've worked with and the hands-on experience I've gained." />
 
-      <v-card
-        v-for="item in journey"
-        :key="item.company"
-        rounded="xl"
-        class="mb-10"
-      >
-        <two-column-layout
-          :default-left-layout="false"
-          :default-right-layout="false"
-          custom-class="align-center px-10 py-5"
-        >
+      <v-card v-for="item in journey" :key="item.company" rounded="xl" class="mb-10">
+        <two-column-layout :default-left-layout="false" :default-right-layout="false"
+          custom-class="align-center px-10 py-5">
           <template #leftColumn>
             <div class="mb-5">
               <div class="mb-5">
@@ -31,22 +20,15 @@
           </template>
           <template #rightColumn>
             <div>
-              <v-carousel
-                hide-delimiters
-                style="
+              <v-carousel hide-delimiters style="
                   min-width: 200px;
+                  min-height: 100px;
                   width: 100%;
                   height: 100%;
                   border-radius: 15px;
-                "
-              >
-                <v-carousel-item
-                  v-for="image in item.carouselImages"
-                  :key="image"
-                  :src="image.src"
-                  max-height="350px"
-                  cover
-                ></v-carousel-item>
+                ">
+                <v-carousel-item v-for="image in item.carouselImages" :key="image" :src="image.src" max-height="350px"
+                  cover />
               </v-carousel>
             </div>
           </template>

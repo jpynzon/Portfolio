@@ -1,23 +1,14 @@
 <template>
   <div class="py-10">
     <v-container>
-      <header-and-subheader
-        class="mb-15"
-        header="My Projects"
-        subheader="A collection of my personal and team projects."
-      />
+      <header-and-subheader class="mb-15" header="My Projects"
+        subheader="A collection of my personal and team projects." />
 
-      <card-with-image-and-text :items="projects" />
+      <card-with-image-and-text :items="displayedProjects" />
 
       <v-col class="d-flex justify-center mt-5">
-        <v-btn
-          height="40px"
-          rounded="pill"
-          variant="text"
-          append-icon="mdi-arrow-right"
-          to="projects"
-        >
-          See All
+        <v-btn height="40px" rounded="pill" variant="text" append-icon="mdi-arrow-right" @click="toggleShowAll">
+          {{ showAll ? 'Show Less' : 'See All' }}
         </v-btn>
       </v-col>
     </v-container>
@@ -25,37 +16,63 @@
 </template>
 
 <script setup>
-import quizStudio from "@/assets/project-thumbnails/quiz-studio.webp";
-import installSmtp from "@/assets/project-thumbnails/install-smtp.webp";
-import quickBites from "@/assets/project-thumbnails/quick-bites.webp";
+import { ref, computed } from 'vue';
+import quizStudio from "@/assets/project-thumbnails/quiz-studio.png";
+import passaQuiz from "@/assets/project-thumbnails/passaquiz.png";
+import yenhost from "@/assets/project-thumbnails/yenhost.png";
+import quickBites from "@/assets/project-thumbnails/quickbites.png";
+
+import quizStudioLogo from "@/assets/project-logos/quiz-studio.webp";
+import passaQuizLogo from "@/assets/project-logos/passaquiz-logo.png";
+import yenhostLogo from "@/assets/project-logos/yenhost.png";
+import quickBitesLogo from "@/assets/project-logos/quickbites-logo.png";
 
 const projects = [
   {
     image: quizStudio,
+    logo: quizStudioLogo,
     title: "Quiz Studio",
+    tags: ['Vuetify', 'Laravel', 'BootstrapCSS'],
     description:
       "An AdminCMS for managing dynamic quizzes and participants, with customizable themes, question types, and participant tracking.",
     buttons: [
       {
-        href: "https://dev.studio.passafund.com",
+        href: "https://games.studio.passafund.com",
         label: "Live Demo",
         icon: "mdi-web",
       },
     ],
   },
   {
-    image: installSmtp,
-    title: "Install SMTP",
+    image: passaQuiz,
+    logo: passaQuizLogo,
+    title: "PassaQuiz",
+    tags: ['PrimeVue', 'Laravel', 'TailwindCSS'],
     description:
-      "An automated solution for setting up SMTP, simplifying the configuration process for seamless email integration.",
+      "An AdminCMS for managing dynamic quizzes and participants, with customizable themes, question types, and participant tracking.",
     buttons: [
       {
-        href: "https://github.com/jpynzon/install-smtp",
+        href: "https://play.passafund.com",
+        label: "Live Demo",
+        icon: "mdi-web",
+      },
+    ],
+  },
+  {
+    image: yenhost,
+    logo: yenhostLogo,
+    title: "YenHost",
+    tags: ['Vuetify'],
+    description:
+      "A shared web hosting service with cpanel hosting",
+    buttons: [
+      {
+        href: "https://github.com/jpynzon/yenhost-frontend",
         label: "Repository",
         icon: "mdi-github",
       },
       {
-        href: "https://dev.play.passafund.com",
+        href: "https://yenhost.com",
         label: "Live Demo",
         icon: "mdi-web",
       },
@@ -63,7 +80,9 @@ const projects = [
   },
   {
     image: quickBites,
+    logo: quickBitesLogo,
     title: "Quick Bites",
+    tags: ['Vuetify', 'Laravel'],
     description:
       "A canteen pre-order system that lets customers pre order products from the canteen for a quick pick-up.",
     buttons: [
@@ -72,23 +91,15 @@ const projects = [
         label: "Repository",
         icon: "mdi-github",
       },
-      {
-        href: "https://dev.play.passafund.com",
-        label: "Live Demo",
-        icon: "mdi-web",
-      },
     ],
   },
 ];
-</script>
 
-<style scoped>
-.card {
-  transition: 0.3s;
-}
-.card:hover {
-  cursor: pointer;
-  transform: translateY(-10px);
-  box-shadow: inset 0 0 0 1px #66fcf1;
-}
-</style>
+const showAll = ref(false);
+
+const displayedProjects = computed(() => (showAll.value ? projects : projects.slice(0, 2)));
+
+const toggleShowAll = () => {
+  showAll.value = !showAll.value;
+};
+</script>
