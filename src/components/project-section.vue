@@ -64,7 +64,7 @@ const projects = [
     title: "YenHost",
     tags: ['Vuetify'],
     description:
-      "A shared web hosting service with cpanel hosting",
+      "A reliable shared web hosting service with cPanel integration, offering seamless website management and performance optimization.",
     buttons: [
       {
         href: "https://github.com/jpynzon/yenhost-frontend",
