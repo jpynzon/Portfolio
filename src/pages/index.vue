@@ -6,7 +6,7 @@
     <v-app>
       <GeminiChat />
 
-      <div v-for="(section, index) in sections" :key="index" ref="sectionRefs">
+      <div v-for="(section, index) in sections" :key="index" :id="sectionIds[index]" ref="sectionRefs">
         <component :is="section" />
       </div>
     </v-app>
@@ -58,6 +58,8 @@ const sections = ref([
   markRaw(JourneySection),
   markRaw(ContactSection),
 ]);
+
+const sectionIds = ref(["home", "about", "tech-stack", "project", "journey", "contact"]);
 
 onMounted(() => {
   nextTick(() => {
