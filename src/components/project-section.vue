@@ -17,17 +17,34 @@
 
 <script setup>
 import { ref, computed } from 'vue';
+import wealthMe from "@/assets/project-thumbnails/wealthme.png";
 import quizStudio from "@/assets/project-thumbnails/quiz-studio.png";
 import passaQuiz from "@/assets/project-thumbnails/passaquiz.png";
 import yenhost from "@/assets/project-thumbnails/yenhost.png";
 import quickBites from "@/assets/project-thumbnails/quickbites.png";
 
+import wealthMeLogo from "@/assets/project-logos/wealthme-logo.png";
 import quizStudioLogo from "@/assets/project-logos/quiz-studio.webp";
 import passaQuizLogo from "@/assets/project-logos/passaquiz-logo.png";
 import yenhostLogo from "@/assets/project-logos/yenhost.png";
 import quickBitesLogo from "@/assets/project-logos/quickbites-logo.png";
 
 const projects = [
+{
+    image: wealthMe,
+    logo: wealthMeLogo,
+    title: "WealthMe",
+    tags: ['Vuetify', 'Laravel', 'OpenAI'],
+    description:
+      "AI powered personal finance management tool that helps users track their expenses, set budgets, and gain insights into their spending habits.",
+    buttons: [
+      {
+        href: "https://github.com/orgs/QuickBites-Capstone/repositories",
+        label: "Repository",
+        icon: "mdi-github",
+      },
+    ],
+  },
   {
     image: quizStudio,
     logo: quizStudioLogo,

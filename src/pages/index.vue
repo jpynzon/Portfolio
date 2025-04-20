@@ -15,9 +15,10 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted, nextTick } from "vue";
-import navigationHeader from "@/layouts/header.vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import navigationHeader from "@/layouts/header.vue";
 
 import HeroSection from "@/components/hero-section.vue";
 import AboutSection from "@/components/about-section.vue";
